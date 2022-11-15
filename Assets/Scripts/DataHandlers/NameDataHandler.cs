@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TextDataHandler : MonoBehaviour
+public class NameDataHandler : MonoBehaviour
 {
     [SerializeField]
     private Text _text;

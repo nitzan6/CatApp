@@ -3,13 +3,15 @@ using UnityEngine;
 public class CatDataHandler : MonoBehaviour
 {
     [SerializeField]
-    private TextDataHandler _nameDataHandler;
+    private NameDataHandler _nameDataHandler;
     [SerializeField]
-    private TextDataHandler _descriptionDataHandler;
+    private DescriptionDataHandler _descriptionDataHandler;
     [SerializeField]
     private ImageDataHandler _colorDataHandler;
     [SerializeField]
     private ImageDataHandler _catImageDataHandler;
+    [SerializeField]
+    private EnabledDataHandler _enableDataHandler;
 
     public void ApplyData(Cat catData)
     {
@@ -17,5 +19,6 @@ public class CatDataHandler : MonoBehaviour
         _descriptionDataHandler.SetText(catData.description);
         _colorDataHandler.SetColor(catData.color);
         _catImageDataHandler.SetImage(catData.qr_code);
+        _enableDataHandler.SetBooleanValue(catData.enable);
     }
 }
