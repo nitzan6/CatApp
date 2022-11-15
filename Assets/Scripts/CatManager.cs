@@ -9,19 +9,19 @@ public class CatManager : MonoBehaviour
     void Awake()
     {
         _api = GetComponent<API>();
+        _catDataHandler = GetComponentInChildren<CatDataHandler>();
     }
 
     public void GetCat()
     {
-        StartCoroutine(GetAndTransferCatData());
+        StartCoroutine(GetAndApplyCatData());
     }
 
-    private IEnumerator GetAndTransferCatData()
+    private IEnumerator GetAndApplyCatData()
     {
-        CatModel newCat = new CatModel();
-
+        Cat newCat = new Cat();
         yield return _api.GetCatFromAPI(cat => newCat = cat);
 
-        Debug.Log(newCat.description);
+        _catDataHandler.ApplyData(newCat);
     }
 }

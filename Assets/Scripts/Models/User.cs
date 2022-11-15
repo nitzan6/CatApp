@@ -1,5 +1,5 @@
 
-public class UserModel
+public class User
 {
     public string name;
 }
