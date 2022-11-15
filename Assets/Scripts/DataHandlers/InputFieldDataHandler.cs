@@ -1,13 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NameDataHandler : MonoBehaviour
+public class InputFieldDataHandler : MonoBehaviour
 {
     [SerializeField]
-    private Text _text;
+    InputField _inputField;
 
     public void SetText(string text)
     {
-        _text.text = text;
+        _inputField.text = text;
     }
 }

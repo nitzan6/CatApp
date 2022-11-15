@@ -3,9 +3,9 @@ using UnityEngine;
 public class CatDataHandler : MonoBehaviour
 {
     [SerializeField]
-    private NameDataHandler _nameDataHandler;
+    private TextDataHandler _nameDataHandler;
     [SerializeField]
-    private DescriptionDataHandler _descriptionDataHandler;
+    private InputFieldDataHandler _descriptionDataHandler;
     [SerializeField]
     private ImageDataHandler _colorDataHandler;
     [SerializeField]
