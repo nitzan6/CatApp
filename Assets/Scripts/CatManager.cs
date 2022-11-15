@@ -4,6 +4,7 @@ using UnityEngine;
 public class CatManager : MonoBehaviour
 {
     private API _api;
+    private CatDataHandler _catDataHandler;
 
     void Awake()
     {
@@ -17,10 +18,10 @@ public class CatManager : MonoBehaviour
 
     private IEnumerator GetAndTransferCatData()
     {
-        string data = string.Empty;
+        CatModel newCat = new CatModel();
 
-        yield return _api.GetCatDataFromAPI(s => data = s);
+        yield return _api.GetCatFromAPI(cat => newCat = cat);
 
-        Debug.Log(data);
+        Debug.Log(newCat.description);
     }
 }

@@ -1417,7 +1417,7 @@ GameObject:
   - component: {fileID: 1381275512}
   - component: {fileID: 1381275513}
   m_Layer: 0
-  m_Name: CatDataApplier
+  m_Name: CatDataHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

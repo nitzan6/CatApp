@@ -7,17 +7,17 @@ public class API : MonoBehaviour
 {
     private const string NAME = "Nitzan";
     private const string URL = "https://pusbkbbia3.execute-api.us-east-1.amazonaws.com/default/get_cat";
-    private User _sendData;
+    private UserModel _sendData;
 
     void Awake()
     {
-        _sendData = new User
+        _sendData = new UserModel
         {
             name = NAME
         };
     }
 
-    public IEnumerator GetCatDataFromAPI(System.Action<string> onReceivedData)
+    public IEnumerator GetCatFromAPI(System.Action<CatModel> onReceivedData)
     {
         using UnityWebRequest www = UnityWebRequest.Post(URL, "POST");
         www.SetRequestHeader("Content-Type", "application/json");
@@ -32,10 +32,11 @@ public class API : MonoBehaviour
         else
         {
             string result = www.downloadHandler.text;
-            
+
             if (onReceivedData != null)
             {
-                onReceivedData(result);
+                CatModel catData = CatModel.FromJson(result);
+                onReceivedData(catData);
             }
         }
     }
